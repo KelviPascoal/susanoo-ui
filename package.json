@@ -1,5 +1,5 @@
 {
-  "name": "flowers-ui",
+  "name": "susanoo-ui",
   "version": "1.0.0",
   "description": "Biblioteca de componentes React",
   "main": "dist/cjs/index.ts",
