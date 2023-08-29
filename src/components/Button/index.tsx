@@ -1,8 +1,7 @@
 import * as React from "react";
-import "./Button.css";
-
+import * as S from "./styles";
 export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {};
 
-export function Button(props: ButtonProps) {
-  return <button className="custom-button" {...props} />;
+export default function Button(props: ButtonProps) {
+  return <S.CustomButton {...props} />;
 }

@@ -1,4 +1,6 @@
-.custom-button {
+import styled from "styled-components";
+
+export const CustomButton = styled.button`
   background-color: #007bff;
   color: white;
   border: none;
@@ -11,4 +13,4 @@
   &:hover {
     background-color: #0056b3;
   }
-}
+`;
