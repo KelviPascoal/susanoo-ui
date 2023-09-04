@@ -3,6 +3,9 @@ import resolve from '@rollup/plugin-node-resolve'; // Resolve módulos npm
 import commonjs from '@rollup/plugin-commonjs'; // Transforma módulos CommonJS para um formato Rollup
 import typescript from '@rollup/plugin-typescript'; // Compila TypeScript
 import dts from 'rollup-plugin-dts'; // Gera arquivos de declaração (.d.ts)
+import del from 'rollup-plugin-delete'
+import peerDepsExternal from 'rollup-plugin-peer-deps-external';
+import terser from '@rollup/plugin-terser';
 
 const pkg = require('./package.json'); // Carrega as informações do package.json
 
@@ -22,6 +25,9 @@ export default [
       },
     ],
     plugins: [
+      peerDepsExternal(),
+      del({ targets: 'dist/*' }),
+      terser(),
       resolve(), // Resolve módulos externos
       commonjs(), // Converte módulos CommonJS para formato Rollup
       typescript({ tsconfig: './tsconfig.json' }), // Compila TypeScript com as configurações do tsconfig.json
